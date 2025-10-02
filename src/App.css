@@ -1,0 +1,212 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR AZUL CON LETRAS BLANCAS */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #0a1f44; /* azul oscuro */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: #00264d; /* azul más oscuro al scroll */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: #99ccff; /* azul claro al hover */
+}
+
+/* SECCIÓN INICIAL */
+.overlay {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: url('https://images.unsplash.com/photo-1584270354949-9aa3d2c20c5e?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+  color: white;
+}
+
+.overlay .title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.overlay .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+}
+
+.overlay .btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background: #99ccff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.overlay .btn:hover {
+  background: #6699cc;
+}
+
+/* SECCIÓN DE SELECCIÓN */
+.selector-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem; /* navbar */
+  padding: 2rem;
+  background-color: #0a1f44;
+}
+
+.selector-section label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.selector-section select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: rgba(0, 102, 204, 0.2); /* azul claro semitransparente */
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.selector-section select option {
+  color: #0a1f44;
+  background: #ffffff;
+}
+
+.selector-section select:hover {
+  background: rgba(0, 51, 102, 0.8); /* azul oscuro al hover */
+  color: white;
+}
+
+/* SECCIÓN DE INFORMACIÓN DEL ASTEROIDE */
+.info-section {
+  width: 100%;
+  min-height: 100vh;
+  background: #0a1f44; /* azul sólido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 1200px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 2rem;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.info-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-card {
+  background: rgba(255,255,255,0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.2);
+}
+
+.info-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #99ccff;
+}
+
+.info-card p, .info-card a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.info-card a:hover {
+  color: #6699cc;
+}
+
+.info-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planet {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 30% 30%, #bbb, #333);
+  border-radius: 50%;
+  box-shadow: inset -30px -30px 60px rgba(0,0,0,0.6);
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
